@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="src/assets/readmelogo.png" alt="oSStack logo" width="96" />
+  <img src="src/assets/readmelogoo.png" alt="oSStack logo" width="96" />
 </p>
 
 <h1 align="center">oSStack</h1>
