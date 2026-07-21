@@ -32,7 +32,7 @@
 
 oSStack is a full-stack cloud deployment platform designed to automate web application deployment. It allows developers to deploy websites either by connecting GitHub repositories or by dragging and dropping project folders directly from their computer.
 
-The platform includes a built-in smart detector that automatically identifies whether an uploaded project is a static HTML/CSS/JS site or a modern framework app (React, Vite, Next.js, Vue, Angular, Svelte, Docusaurus, Astro, etc.). Framework apps undergo automated dependency installation, local build execution, and bundle compilation, while static sites are deployed instantly without overhead. Build progress and terminal logs are streamed in real time to the web dashboard over WebSockets.
+The platform includes a built-in smart detector that automatically identifies whether an uploaded project is a static HTML/CSS/JS site or a modern framework app (React, Vite, Vue, Angular, Svelte, Docusaurus, Astro, etc.). Framework apps undergo automated dependency installation, local build execution, and bundle compilation, while static sites are deployed instantly without overhead. Build progress and terminal logs are streamed in real time to the web dashboard over WebSockets.
 
 This repository contains the open-source codebase for the frontend web application and dashboard.
 
@@ -40,6 +40,14 @@ This repository contains the open-source codebase for the frontend web applicati
 > **Open Source Notice**
 > The **frontend web application, dashboard, build engine, and backend services** are open sourced.
 > You can explore the full oSStack ecosystem here, run the code locally, or access the backend repository at [osstack-deploy-backend-code](https://github.com/sanketpadhyal/osstack-deploy-backend-code).
+
+> [!WARNING]
+> **Critical Backend Hosting & Hardware Requirements**
+> When hosting the backend on cloud platforms (e.g. Google Cloud Run, Railway, Render, AWS):
+> - **Instance-based Allocation (Always On)**: You MUST select **Instance-based** billing/CPU allocation (always allocated) instead of Request-based serverless execution. Full CPU lifecycle and active connections are required for background build processes (`npm install`, compilation) and persistent Socket.IO WebSockets.
+> - **Resource Sizing**: Allocate **at least 2 GiB Memory (RAM)** and dedicated vCPU.
+> 
+> *Failure to use Instance-based allocation or allocating less than 2 GiB RAM will cause your deployments to freeze, time out, or crash due to Out-Of-Memory (OOM) errors during build compilation.*
 
 ## Product Links
 
