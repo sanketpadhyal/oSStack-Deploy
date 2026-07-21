@@ -2,7 +2,7 @@
   <img src="src/assets/readmelogoo.png" alt="oSStack logo" width="96" />
 </p>
 
-<h1 align="center">oSStack</h1>
+<h1 align="center">oSStack Deploy</h1>
 
 <p align="center">
   A modern, high-performance web deployment platform inspired by Vercel & Netlify — supporting zero-config static site deployments, automated framework detection (React, Vite, Next.js, Vue, Angular, Svelte), real-time build streaming, drag-and-drop folder deployment, and Supabase storage integration.
